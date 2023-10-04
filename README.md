@@ -1,3 +1,2 @@
 # ransomware
-Simple ransomware on python
-Please install cryptography and fernet
+Install cryptography and fernet!
