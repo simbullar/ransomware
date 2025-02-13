@@ -1,2 +1,4 @@
 # ransomware
-Install cryptography and fernet!
+dependecies:
+- cryptography
+- fernet
